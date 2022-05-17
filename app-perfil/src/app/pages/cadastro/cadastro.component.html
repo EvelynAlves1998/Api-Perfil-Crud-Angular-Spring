@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+
+<h5 class="card-title row d-flex justify-content-center">Cadastro de Usuário</h5>
+<form [formGroup]="Formulario" (submit)="Enviar()">
+  <div class="row d-flex justify-content-center">
+    <div class="col-8 mb-3">
+      <div class="form-group">
+        <label class="form-label ">Nome Completo</label>
+        <input type="text" class="form-control" formControlName="nome" placeholder="Nome">
+      </div>
+      <app-mensagem [controles]="Formulario.controls['nome']" [mensagem]="'Erro ao preencher nome'">
+      </app-mensagem>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-8 mb-3">
+      <div class="form-group">
+        <label class="form-label">Endereço</label>
+        <input type="text" class="form-control" formControlName="rua" placeholder="Rua">
+      </div>
+      <app-mensagem [controles]="Formulario.controls['rua']" [mensagem]="'Erro ao preencher rua'">
+      </app-mensagem>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-8 mb-3">
+      <div class="form-group">
+        <label class="form-label">Número da residência</label>
+        <input type="text" class="form-control" formControlName="numero" placeholder="Número da residência">
+      </div>
+      <app-mensagem [controles]="Formulario.controls['numero']" [mensagem]="'Erro ao preencher número da residência'">
+      </app-mensagem>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-8 mb-3">
+      <div class="form-group">
+        <label class="form-label">CEP</label>
+        <input type="text" class="form-control" formControlName="cep" placeholder="CEP">
+      </div>
+      <app-mensagem [controles]="Formulario.controls['cep']" [mensagem]="'Erro ao preencher CEP'">
+      </app-mensagem>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-secondary">Salvar</button>
+  </div>
+</form>
+<app-footer class="fixed-bottom"></app-footer>
