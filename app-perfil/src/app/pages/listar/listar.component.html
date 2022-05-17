@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<br>
+<h5 class="card-title row d-flex justify-content-center">Lista de Usuários Cadastrados</h5>
+<br>
+<div class="container-col-sm-6">
+  <div class="row d-flex justify-content-center">
+    <div *ngFor="let p of usuarios" class="card" style="width: 18rem;">
+      <br>
+      <h5 class="card-title">{{p.nome}}</h5>
+      <p class="card-text">ID: {{p.id}}</p>
+      <p class="card-text">Endereço: {{p.rua}}</p>
+      <p class="card-text">Numero da Residência: {{p.numero}}</p>
+      <p class="card-text">CEP:{{p.cep}}</p>
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-outline-info" [routerLink]="['/editar', p.id]">Editar</button>
+        </div>
+        <div class="col">
+          <button class="btn btn-outline-danger" (click)="DeletarUsuario(p.id!)">Deletar</button>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
+<br>
+<app-footer class="fixed-bottom"></app-footer>

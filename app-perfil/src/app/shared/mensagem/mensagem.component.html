@@ -1,0 +1,13 @@
+<div class="alert alert-danger" *ngIf="controles.status == 'INVALID' && controles.touched == true" role="alert">
+  {{ mensagem }}
+</div>
+
+<p *ngIf="debug == true">
+  Status : {{ controles.status }}
+</p>
+<p *ngIf="debug == true">
+  Erros : {{ controles.errors | json }}
+</p>
+<p *ngIf="debug == true">
+  Touched : {{ controles.touched  }}
+</p>
